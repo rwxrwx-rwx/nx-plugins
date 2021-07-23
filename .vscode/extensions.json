@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    // Formatters
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    // Theme extensions
+    "vscode-icons-team.vscode-icons",
+    "dracula-theme.theme-dracula",
+    // Intellisense extensions
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    // Recommended extensions
+    "streetsidesoftware.code-spell-checker",
+    "alefragnani.bookmarks",
+    "eamodio.gitlens",
+    // Nx
+    "nrwl.angular-console",
+    "firsttris.vscode-jest-runner"
+  ]
+}

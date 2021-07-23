@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "generators": "libs/generators"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
+}
