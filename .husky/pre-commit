@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+yarn nx affected:lint --fix
 yarn lint-staged --allow-empty
