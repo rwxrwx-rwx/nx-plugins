@@ -39,8 +39,8 @@ The Nx quickstart generators
 - add PR workflow
 
 ```yml
-- name: Validate git branch
-  run: node ./scripts/git-branch-lint.js "${{ github.head_ref }}"
+- name: Validate git commit message
+  run: node ./scripts/git-commit-lint.js "${{ github.head_ref }}"
 ```
 
 - update package.json
