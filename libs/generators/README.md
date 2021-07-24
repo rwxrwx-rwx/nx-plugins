@@ -2,6 +2,8 @@
 
 The Nx quickstart generators
 
+### github1s
+
 ### Prettier
 
 ### Vscode settings
@@ -19,11 +21,36 @@ The Nx quickstart generators
 
 ```json
 {
+  "scripts": { "postinstall": "husky install" },
   "lint-staged": {
     "*": ["pretty-quick --staged", "git add -f"]
   }
 }
 ```
+
+### commitizen, conventional changelog
+
+- yarn add -D commitizen@4.2.4 cz-customizable@6.3.0
+- add cz-config.js
+- add package.json config
+- git-commit-lint.js
+- add docs
+- husky add .husky/prepare-commit-msg "node ./scripts/git-commit-lint.js"
+- add PR workflow
+
+```yml
+- name: Validate git branch
+  run: node ./scripts/git-branch-lint.js "${{ github.head_ref }}"
+```
+
+- update package.json
+
+````json
+```json
+{
+  "scripts": { "commit": "git-cz" },
+}
+````
 
 ### Eslint - sort and remove unused imports
 
@@ -186,3 +213,5 @@ jobs:
         run: yarn nx affected --target=test --base=origin/master --head=HEAD
 
 ```
+
+### Configure Renovate BOT
