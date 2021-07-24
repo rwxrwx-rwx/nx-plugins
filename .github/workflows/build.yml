@@ -3,17 +3,14 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Build & Affected Release
+name: Build Check
 
 on:
-  push:
-    branches:
-      - master
-      - main
+  - push
 
 jobs:
   build:
-    name: Build & Affected Release
+    name: Build Check
     runs-on: ubuntu-latest
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -47,15 +44,15 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Lint affected projects
-        run: yarn nx affected --target=lint --base=HEAD~1 --head=HEAD
+      - name: Lint projects
+        run: yarn nx run-many --target lint --all --parallel
 
-      - name: Build affected projects
-        run: yarn nx affected --target=build --base=HEAD~1 --head=HEAD
+      - name: Build projects
+        run: yarn nx run-many --target build --all --parallel --with-deps
 
-      - name: Test affected projects
-        run: yarn nx affected --target=test --base=HEAD~1 --head=HEAD
+      - name: Test projects
+        run: yarn nx run-many --target test --all --parallel
 
       - name: Release effected projects
-        if: github.ref == 'refs/heads/master'
-        run: echo "yarn nx affected --target=release --base=HEAD~1 --head=HEAD"
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        run: yarn nx affected --target=release --base=HEAD~1 --head=HEAD
