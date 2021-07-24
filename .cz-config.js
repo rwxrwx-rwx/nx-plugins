@@ -29,7 +29,11 @@ module.exports = {
       description: 'anything related to managing the repo itself'
     },
     { name: 'misc', description: 'misc stuff' },
-    { name: 'release', description: 'anything related to release process' }
+    { name: 'release', description: 'anything related to release process' },
+    {
+      name: 'deps',
+      description: 'anything related to bump package version'
+    }
   ],
   // Ticket options
   allowTicketNumber: true,
