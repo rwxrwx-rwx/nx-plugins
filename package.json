@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
+    "preinstall": "node ./scripts/preinstall.js",
+    "postinstall": "husky install",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
@@ -24,8 +26,8 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "postinstall": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "create-schematic": "nx g workspace-schematic"
   },
   "private": true,
   "dependencies": {
@@ -33,11 +35,13 @@
   },
   "devDependencies": {
     "@nrwl/cli": "12.6.2",
+    "@nrwl/devkit": "12.6.2",
     "@nrwl/eslint-plugin-nx": "12.6.2",
     "@nrwl/jest": "12.6.2",
     "@nrwl/linter": "12.6.2",
     "@nrwl/node": "12.6.2",
     "@nrwl/nx-cloud": "latest",
+    "@nrwl/schematics": "8.12.11",
     "@nrwl/tao": "12.6.2",
     "@nrwl/workspace": "12.6.2",
     "@types/jest": "26.0.24",
@@ -74,5 +78,8 @@
     "cz-customizable": {
       "config": "./cz-config.js"
     }
-  }
+  },
+  "workspaces": [
+    "workspaces/*"
+  ]
 }
