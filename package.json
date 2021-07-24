@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
+    "preinstall": "node ./scripts/preinstall.js",
+    "postinstall": "husky install",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
@@ -24,7 +26,6 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "postinstall": "husky install",
     "commit": "git-cz",
     "create-schematic": "nx g workspace-schematic"
   },
