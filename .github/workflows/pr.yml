@@ -30,6 +30,9 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Validate pull request title
+        run: node ./scripts/git-commit-lint.js "${{ github.event.pull_request.title }}"
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"

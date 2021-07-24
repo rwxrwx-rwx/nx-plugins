@@ -23,7 +23,9 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "postinstall": "husky install",
+    "commit": "git-cz"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +44,8 @@
     "@types/node": "16.4.1",
     "@typescript-eslint/eslint-plugin": "4.28.4",
     "@typescript-eslint/parser": "4.28.4",
+    "commitizen": "4.2.4",
+    "cz-customizable": "6.3.0",
     "dotenv": "10.0.0",
     "eslint": "7.31.0",
     "eslint-config-prettier": "8.3.0",
@@ -62,5 +66,13 @@
       "pretty-quick --staged",
       "git add -f"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz-config.js"
+    }
   }
 }
