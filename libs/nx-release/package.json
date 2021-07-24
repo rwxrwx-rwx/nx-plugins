@@ -2,7 +2,7 @@
   "name": "@ez-tools/nx-release",
   "version": "0.0.1",
   "dependencies": {
-    "@semantic-release/commit-analyzer": "7.0.0",
+    "@semantic-release/commit-analyzer": "8.0.1",
     "@semantic-release/release-notes-generator": "9.0.3"
   }
 }
