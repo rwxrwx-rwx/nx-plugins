@@ -1,23 +1,11 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: PR or Branch Validation
+name: PR Check
 
 on:
-  push:
-    branches-ignore:
-      - master
-      - main
-  pull_request:
-    branches:
-      - master
-      - main
+  - pull_request
 
 jobs:
   build:
-    name: PR or Branch Validation
+    name: PR Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GIT
@@ -52,10 +40,10 @@ jobs:
         run: yarn install
 
       - name: Lint affected projects
-        run: yarn nx affected --target=lint --base=origin/master --head=HEAD
+        run: yarn nx affected --target=lint --base=origin/${{ github.event.pull_request.base.ref }} --head=HEAD
 
       - name: Build affected projects
-        run: yarn nx affected --target=build --base=origin/master --head=HEAD
+        run: yarn nx affected --target=build --base=origin/${{ github.event.pull_request.base.ref }} --head=HEAD
 
       - name: Test affected projects
-        run: yarn nx affected --target=test --base=origin/master --head=HEAD
+        run: yarn nx affected --target=test --base=origin/${{ github.event.pull_request.base.ref }} --head=HEAD
