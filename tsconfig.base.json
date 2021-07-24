@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ez-tools/nx-generators": ["libs/generators/src/index.ts"]
+      "@ez-tools/nx-generators": ["libs/nx-generators/src/index.ts"],
+      "@ez-tools/nx-release": ["libs/nx-release/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

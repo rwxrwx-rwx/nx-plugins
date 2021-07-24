@@ -1,27 +1,27 @@
 {
-  "root": "libs/generators",
-  "sourceRoot": "libs/generators/src",
+  "root": "libs/nx-generators",
+  "sourceRoot": "libs/nx-generators/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/node:package",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/generators",
-        "tsConfig": "libs/generators/tsconfig.lib.json",
-        "packageJson": "libs/generators/package.json",
-        "main": "libs/generators/src/index.ts",
-        "assets": ["libs/generators/*.md"]
+        "outputPath": "apps/libs/nx-generators/lib",
+        "tsConfig": "libs/nx-generators/tsconfig.lib.json",
+        "packageJson": "libs/nx-generators/package.json",
+        "main": "libs/nx-generators/src/index.ts",
+        "assets": ["libs/nx-generators/*.md"]
       }
     },
-    "runtime": {
+    "debug": {
       "executor": "@nrwl/node:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/generators",
-        "tsConfig": "libs/generators/tsconfig.lib.json",
-        "packageJson": "libs/generators/package.json",
-        "main": "libs/generators/src/index.ts",
+        "outputPath": "apps/libs/nx-generators/lib",
+        "tsConfig": "libs/nx-generators/tsconfig.lib.json",
+        "packageJson": "libs/nx-generators/package.json",
+        "main": "libs/nx-generators/src/index.ts",
         "assets": [],
         "configurations": {
           "production": {
@@ -35,7 +35,7 @@
     "serve": {
       "executor": "@nrwl/node:execute",
       "options": {
-        "buildTarget": "generators:runtime",
+        "buildTarget": "nx-generators:debug",
         "inspect": "inspect-brk",
         "port": 9229
       }
@@ -43,14 +43,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["libs/generators/**/*.ts"]
+        "lintFilePatterns": ["libs/nx-generators/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/generators"],
+      "outputs": ["coverage/libs/nx-generators"],
       "options": {
-        "jestConfig": "libs/generators/jest.config.js",
+        "jestConfig": "libs/nx-generators/jest.config.js",
         "passWithNoTests": true
       }
     }

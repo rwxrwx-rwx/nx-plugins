@@ -1,7 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "generators": "libs/generators"
+    "nx-generators": "libs/nx-generators",
+    "nx-release": "libs/nx-release"
   },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
