@@ -7,18 +7,18 @@
       "executor": "@nrwl/node:package",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "apps/libs/nx-generators/lib",
+        "outputPath": "libs/nx-generators/lib",
         "tsConfig": "libs/nx-generators/tsconfig.lib.json",
         "packageJson": "libs/nx-generators/package.json",
         "main": "libs/nx-generators/src/index.ts",
-        "assets": ["libs/nx-generators/*.md"]
+        "assets": []
       }
     },
     "debug": {
       "executor": "@nrwl/node:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "apps/libs/nx-generators/lib",
+        "outputPath": "libs/nx-generators/lib",
         "tsConfig": "libs/nx-generators/tsconfig.lib.json",
         "packageJson": "libs/nx-generators/package.json",
         "main": "libs/nx-generators/src/index.ts",

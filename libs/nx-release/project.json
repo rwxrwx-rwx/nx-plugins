@@ -7,18 +7,18 @@
       "executor": "@nrwl/node:package",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/nx-release",
+        "outputPath": "libs/nx-release/lib",
         "tsConfig": "libs/nx-release/tsconfig.lib.json",
         "packageJson": "libs/nx-release/package.json",
         "main": "libs/nx-release/src/index.ts",
-        "assets": ["libs/nx-release/*.md"]
+        "assets": []
       }
     },
     "debug": {
       "executor": "@nrwl/node:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/nx-release",
+        "outputPath": "libs/nx-release/lib",
         "tsConfig": "libs/nx-release/tsconfig.lib.json",
         "packageJson": "libs/nx-release/package.json",
         "main": "libs/nx-release/src/index.ts",

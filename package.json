@@ -77,5 +77,8 @@
     "cz-customizable": {
       "config": "./cz-config.js"
     }
-  }
+  },
+  "workspaces": [
+    "libs/*/lib"
+  ]
 }
