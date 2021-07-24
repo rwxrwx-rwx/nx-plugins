@@ -3,6 +3,6 @@
   "version": "0.0.1",
   "dependencies": {
     "@semantic-release/commit-analyzer": "7.0.0",
-    "@semantic-release/release-notes-generator": "9.0.0"
+    "@semantic-release/release-notes-generator": "9.0.3"
   }
 }
